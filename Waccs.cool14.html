@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Hairstyle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #222, #444);
+            color: white;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .gallery img {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(255, 107, 129, 0.5);
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff6b81, #ffb6c1);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .back-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
+        }
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .modal .close:hover {
+            color: #ff6b81;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Choose Your  Accessories</h1>
+
+    <div class="gallery">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A1.jpg" alt="accs 1" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A2.jpg" alt="accs 2" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A3.jpg" alt="accs 3" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A4.jpg" alt="accs 4" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A5.jpg" alt="accs 5" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A6.jpg" alt="accs 6" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A7.jpg" alt="accs 7" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A8.jpg" alt="accs 8" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A9.jpg" alt="accs 9" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A10.jpg" alt="accs 10" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A11.jpg" alt="accs 11" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A12.jpg" alt="accs 12" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A13.jpg" alt="accs 13" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A14.jpg" alt="accs 14" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A15.jpg" alt="accs 15" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A16.jpg" alt="accs 16" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A17.jpg" alt="accs 17" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A18.jpg" alt="accs 18" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A19.jpg" alt="accs 19" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A20.jpg" alt="accs 20" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A21.jpg" alt="accs 21" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A22.jpg" alt="accs 22" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A23.jpg" alt="accs 23" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A24.jpg" alt="accs 24" onclick="openModal(this)">
+        <img src="./Images/shapes/u-neck/west.cool.accs/A25.jpg" alt="accs 25" onclick="openModal(this)">
+       
+    </div>
+    <p> "Disclaimer: Images are used for educational purposes only. All rights belong to their respective owners."</p>
+
+    <button class="back-button" onclick="goBack()">Go Back</button>
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function openModal(image) {
+            document.getElementById("modalImage").src = image.src;
+            document.getElementById("imageModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            let modal = document.getElementById("imageModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Close modal when pressing Escape key
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #5d5a5a, #3a3a3a);
+            color: #fff;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .selected-options {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .selected-options img {
+            width: 160px;
+            height: auto;
+            border-radius: 12px;
+            margin: 10px;
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .category {
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #ff6b81, #ffb6c1);
+            border-radius: 12px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            color: white;
+            border: none;
+            display: inline-block;
+        }
+        .category:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(255, 107, 129, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Customize Your Style</h1>
+
+    <div class="selected-options">
+        <h2>Your Selection</h2>
+        <img id="neck-img" src="" alt="Selected Neck Shape">
+
+        <p>Chosen Color: <span id="chosen-color">Not Selected</span></p>
+    </div>
+
+    <h2>Choose Additional Styling</h2>
+
+    <div class="categories">
+        <div class="category" onclick="redirectToPage('Whair.warm4.html')">Hairstyles</div>
+        <div class="category" onclick="redirectToPage('Waccs.warm4.html')">Accessories</div>
+        <div class="category" onclick="redirectToPage('Wfoot.warm4.html')">Shoes/Slippers</div>
+    </div>
+
+    <script>
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+
+        function updateCategoryLinks(color) {
+            const coolColors = ["blue", "green", "purple", "teal"];
+            if (!color) return;
+
+            if (coolColors.includes(color.toLowerCase())) {
+                // Set display text to "Cool"
+                document.getElementById('chosen-color').textContent = "Cool";
+
+                const hairstylePage = "Whair.cool4.html";
+                const accessoriesPage = "Waccs.cool4.html";
+                const footwearPage = "Wfoot.cool4.html";
+
+                const categoryButtons = document.querySelectorAll('.category');
+
+                if (categoryButtons.length >= 3) {
+                    categoryButtons[0].setAttribute('onclick', `redirectToPage('${hairstylePage}')`);
+                    categoryButtons[1].setAttribute('onclick', `redirectToPage('${accessoriesPage}')`);
+                    categoryButtons[2].setAttribute('onclick', `redirectToPage('${footwearPage}')`);
+                } else {
+                    console.error("Category buttons not found!");
+                }
+            }
+        }
+
+        // Example: user picked a cool color like blue
+        const selectedColor = "blue"; // ← replace with dynamic color if needed
+        updateCategoryLinks(selectedColor);
+        function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        colorType: params.get('colorType'),
+        neckImage: params.get('neckImage')
+    };
+}
+
+window.onload = function () {
+    const { colorType, neckImage } = getQueryParams();
+
+    // Update color
+    if (colorType) {
+        document.getElementById('chosen-color').textContent = colorType.charAt(0).toUpperCase() + colorType.slice(1);
+    }
+
+    // Update neck image
+    if (neckImage) {
+        document.getElementById('neck-img').src = decodeURIComponent(neckImage);
+    }
+
+    // Update category links based on color
+    updateCategoryLinks(colorType);
+};
+
+    </script>
+
+</body>
+</html>

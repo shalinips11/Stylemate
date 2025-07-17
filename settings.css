@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 48, 48);
+}
+
+/* Settings Container */
+.settings-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70%;
+    max-width: 400px; /* Adjust width as needed */
+    background: #fff;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Styles */
+.settings-sidebar {
+    width: 100%;
+    background: #07c2c9;
+    color: black;
+    padding: 0;
+}
+
+.settings-sidebar .settings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-sidebar .settings-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.settings-sidebar .settings-list a {
+    display: block;
+    text-align: justify;
+    font-size: 23px;
+    padding: 30px 40px;
+    color: rgb(1, 1, 1);
+    text-decoration:wavy;
+    transition: background 0.3s;
+}
+
+.settings-sidebar .settings-list a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Content Area */
+.settings-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.settings-content h1 {
+    margin-top: 0;
+}
+
+.settings-content p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}

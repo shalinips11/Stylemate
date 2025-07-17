@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <title>Stylish Webpage</title>
+  <link rel="stylesheet" href="./stowest.css" />
+</head>
+<body>
+  <h1>Choose Your Outfit</h1>
+
+  <div class="gallery">
+    <div class="image-container" onclick="showPopup('Pair With')">
+      <img src="./Images/sto img/western/CT.jpg" alt="Image 1" />
+      <div class="overlay"><h2>CROP TOP</h2></div>
+    </div>
+    <div class="image-container" onclick="showPopup('Pair With')">
+      <img src="./Images/sto img/western/hoodie.jpg" alt="Image 2" />
+      <div class="overlay"><h2>HOODIE</h2></div>
+    </div>
+    <div class="image-container" onclick="showPopup('Pair With')">
+      <img src="./Images/sto img/western/TS.jpg" alt="Image 3" />
+      <div class="overlay"><h2>T-SHIRT</h2></div>
+    </div>
+    <div class="image-container" onclick="showPopup('Pair With')">
+      <img src="./Images/sto img/western/SS.jpg" alt="Image 4" />
+      <div class="overlay"><h2>SWEATSHIRT</h2></div>
+    </div>
+    <div class="image-container" onclick="window.location.href='page2.html'" style="cursor:pointer;">
+      <img src="./Images/sto img/western/BLAZ.jpg" alt="Image 5" />
+      <div class="overlay"><h2>BLAZER</h2></div>
+    </div>
+    
+    <div class="image-container" onclick="showPopup('Pair With')">
+      <img src="./Images/sto img/western/Shirt.jpg" alt="Image 6" />
+      <div class="overlay"><h2>SHIRT</h2></div>
+    </div>
+    <div class="image-container" onclick="window.location.href='page2.html'" style="cursor:pointer;">
+      <img src="./Images/sto img/western/JS.jpg" alt="Image 7" />
+      <div class="overlay"><h2>JUMPSUIT</h2></div>
+    </div>
+    <div class="image-container" onclick="window.location.href='page2.html'" style="cursor:pointer;">
+      <img src="./Images/sto img/western/Gown.jpg" alt="Image 8" />
+      <div class="overlay"><h2>MAXI GOWN</h2></div>
+    </div>
+  </div>
+
+  <!-- Bottom Disclaimer -->
+  <p class="main-disclaimer">
+    Disclaimer: Images are used for educational purposes only. All rights belong to their respective owners.
+  </p>
+
+  <!-- Popup Modal -->
+  <div id="popup-modal" class="popup-modal">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2 id="popup-title"></h2>
+      <div class="popup-gallery">
+        <div class="popup-item" onclick="goToPage('page2.html')">
+          <img src="./Images/jeans.jpg" alt="Jeans" />
+          <p>JEAN</p>
+        </div>
+        <div class="popup-item" onclick="goToPage('page2.html')">
+          <img src="./Images/shorts.jpg" alt="Shorts" />
+          <p>SHORTS</p>
+        </div>
+        <div class="popup-item" onclick="goToPage('page2.html')">
+          <img src="./Images/skirt.jpg" alt="Skirt" />
+          <p>SKIRT</p>
+        </div>
+        <div class="popup-item" onclick="goToPage('page2.html')">
+          <img src="./Images/leggins.jpg" alt="Leggings" />
+          <p>LEGGINGS</p>
+        </div>
+        <div class="popup-item" onclick="goToPage('page2.html')">
+          <img src="./Images/palazzo.jpg" alt="Palazzo" />
+          <p>PALAZZO</p>
+        </div>
+        <div class="popup-item" onclick="goToPage('page2.html')">
+          <img src="./Images/SP.jpg" alt="Straight Pant" />
+          <p>STRAIGHT PANTS</p>
+        </div>
+      </div>
+
+      <!-- Disclaimer inside popup -->
+      <div class="popup-disclaimer">
+        <p>Disclaimer: Images are used for educational purposes only. All rights belong to their respective owners.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./stowest.js"></script>
+  <script>
+    function showPopup(title) {
+      document.getElementById('popup-title').textContent = title;
+      document.getElementById('popup-modal').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popup-modal').style.display = 'none';
+    }
+
+    function goToPage(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

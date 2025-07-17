@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customize Your Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #5d5a5a, #3a3a3a);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { font-size: 3rem; margin-bottom: 20px; }
+    .selected-options {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+    .selected-options img {
+      width: 160px;
+      border-radius: 12px;
+      margin: 10px;
+    }
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .category {
+      padding: 20px 60px;
+      background: linear-gradient(135deg, #ff6b81, #ffb6c1);
+      border-radius: 12px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      color: white;
+      text-transform: uppercase;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    .category:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Customize Your Style</h1>
+
+  <div class="selected-options">
+    <h2>Your Selection</h2>
+    <img id="neck-img" src="" alt="Selected Neck Shape"/>
+    <p>Chosen Color: <span id="chosen-color">Not Selected</span></p>
+  </div>
+
+  <h2>Choose Additional Styling</h2>
+
+  <div class="categories">
+    <div class="category" onclick="redirectToPage('whair.cool1.html')">Hairstyles</div>
+    <div class="category" onclick="redirectToPage('Waccs.cool1.html')">Accessories</div>
+    <div class="category" onclick="redirectToPage('Wfoot.cool1.html')">Shoes/Slippers</div>
+  </div>
+
+  <script>
+    function redirectToPage(page) {
+      window.location.href = page;
+    }
+
+    function updateCategoryLinks(color) {
+      if (!color) return;
+
+      const isCool = color.toLowerCase() === 'cool';
+
+      document.getElementById('chosen-color').textContent =
+        color.charAt(0).toUpperCase() + color.slice(1);
+
+      const pages = {
+        hairstyle: isCool ? "whair.cool1.html" : "whair.warm1.html",
+        accessories: isCool ? "Waccs.cool1.html" : "Waccs.warm1.html",
+        footwear: isCool ? "Wfoot.cool1.html" : "Wfoot.warm1.html"
+      };
+
+      const categoryButtons = document.querySelectorAll('.category');
+      if (categoryButtons.length >= 3) {
+        categoryButtons[0].setAttribute('onclick', `redirectToPage('${pages.hairstyle}')`);
+        categoryButtons[1].setAttribute('onclick', `redirectToPage('${pages.accessories}')`);
+        categoryButtons[2].setAttribute('onclick', `redirectToPage('${pages.footwear}')`);
+      }
+    }
+
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        colorType: params.get('colorType'),
+        neckImage: params.get('neckImage')
+      };
+    }
+
+    window.onload = function () {
+      const { colorType, neckImage } = getQueryParams();
+
+      if (colorType) {
+        updateCategoryLinks(colorType);
+      }
+
+      if (neckImage) {
+        document.getElementById('neck-img').src = decodeURIComponent(neckImage);
+      }
+    };
+  </script>
+
+</body>
+</html>

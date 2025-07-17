@@ -1,0 +1,86 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+
+  a{
+    text-decoration: none;
+    color: rgb(83, 39, 196);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    height: auto;
+    width: 400px;
+    background-color: #000000;
+    color: rgb(249, 239, 239);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .sidebar h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #f14b0f;
+  }
+  
+  .theme-list {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    font-style: inherit;
+  }
+  
+  .theme-item {
+    font-size: 20px;
+    padding: 34px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Theme item colors */
+  .theme-item.festive { background-color: #e3958c; } /* Festive - Red */
+  .theme-item.college-office { background-color: #82afcd; } /* College/Office - Blue */
+  .theme-item.party { background-color: #caa2d9; } /* Party - Purple */
+  .theme-item.casual { background-color: #85c09e; } /* Casual - Green */
+  .theme-item.western { background-color: #cbb086; } /* Western - Orange */
+  .theme-item.formal { background-color: #82a4c6; } /* Formal - Dark Blue */
+  
+  .theme-item:hover {
+    background-color: #e04a7a;
+  }
+  
+  /* Main content styling */
+  .main-content {
+    margin-left: 270px; /* Adjusted to fit next to sidebar */
+    padding: 80px;
+    width: calc(100% - 270px);
+  }
+  
+  .main-content h1 {
+    font-size: 40px;
+    color: #60c0ce;
+  }
+  
+  .main-content p {
+    font-size: 25px;
+    color: #6cd191;
+  }
+  

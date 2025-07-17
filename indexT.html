@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trends Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleT.css">
+</head>
+<body>
+    <h1>Trends</h1>
+
+    <!-- Trend Grid -->
+    <div class="trends-grid">
+        <!-- Trend 1 -->
+        <div class="trend">
+            <img src="Images/trends/fu saree.jpg" alt="Fusion Sarees" onclick="openModal(this)">
+            <h3>Fusion Sarees</h3>
+            <p>Traditional sarees with crop tops, belts, or jackets.</p>
+            <button onclick="saveTrend(this)">Save</button>
+            <button onclick="shareTrend('Fusion Sarees')">Share</button>
+        </div>
+
+        <!-- Trend 2 -->
+        <div class="trend">
+            <img src="Images/trends/off saree.jpg" alt="Pastel Lehengas" onclick="openModal(this)">
+            <h3>Pastel Lehengas</h3>
+            <p>Soft pastel lehengas with minimal embroidery.</p>
+            <button onclick="saveTrend(this)">Save</button>
+            <button onclick="shareTrend('Pastel Lehengas')">Share</button>
+        </div>
+
+        <!-- Trend 3 -->
+        <div class="trend">
+            <img src="Images/trends/oversize fits.jpg" alt="Oversized Fits" onclick="openModal(this)">
+            <h3>Co-Ord Sets</h3>
+            <p>Matching top and bottom for casual or party looks.</p>
+            <button onclick="saveTrend(this)">Save</button>
+            <button onclick="shareTrend('Co-Ord Sets')">Share</button>
+        </div>
+
+        <!-- Trend 4 -->
+        <div class="trend">
+            <img src="Images/trends/jean.jpg" alt="Co-Ord Sets" onclick="openModal(this)">
+            <h3>Oversized Fits</h3>
+            <p>Loose jeans, shirts, and blazers for a relaxed vibe.</p>
+            <button onclick="saveTrend(this)">Save</button>
+            <button onclick="shareTrend('Oversized Fits')">Share</button>
+        </div>
+    </div>
+
+    <!-- Saved Trends Section -->
+    <h2>Your Saved Trends</h2>
+    <div id="favorite-list"></div>
+
+    <p class="disclaimer">Disclaimer: Images are used for educational purposes only. All rights belong to their respective owners.</p>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Popup">
+    </div>
+
+    <script src="scriptT.js"></script>
+</body>
+</html>

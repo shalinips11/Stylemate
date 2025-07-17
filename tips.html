@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion and Makeup Tips</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: rgb(13, 6, 6);
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        .container {
+            height: 50%;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .button-container {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .button-container button {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .button-container button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .tips-section {
+            height: auto;
+            display: none;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .tips-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .tip {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-left: 5px solid #764ba2;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .tip h2 {
+            margin-top: 0;
+            color: #764ba2;
+            font-size: 1.2rem;
+        }
+        .tip p {
+            margin: 0.5rem 0;
+            color: #555;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #eba773;
+            color: rgb(240, 233, 233);
+            font-size: 1rem;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.tips-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Create Your Own Magic!</h1>
+        <p>follow these tips to enhance your day</p>
+    </header>
+
+    <div class="container">
+        <div class="button-container">
+            <button onclick="showSection('fashion-tips')">Fashion Tips</button>
+            <button onclick="showSection('makeup-tips')">Makeup Tips</button>
+        </div>
+
+        <section id="fashion-tips" class="tips-section">
+            <h2>Fashion Tips</h2>
+            <div class="tip">
+                <h2>Build a Capsule Wardrobe</h2>
+                <p>Invest in timeless, versatile pieces like a tailored blazer, white shirt, and a pair of dark jeans. These essentials can be mixed and matched for various occasions.</p>
+            </div>
+            <div class="tip">
+                <h2>Accessorize Thoughtfully</h2>
+                <p>Accessories can transform your look. Choose a statement piece like a bold necklace or a chic belt to elevate simple outfits.</p>
+            </div>
+            <div class="tip">
+                <h2>Embrace Your Body Shape</h2>
+                <p>Wear outfits that highlight your best features. For example, high-waisted pants can accentuate your waist, while A-line dresses flatter most body shapes.</p>
+            </div>
+        </section>
+
+        <section id="makeup-tips" class="tips-section">
+            <h2>Makeup Tips</h2>
+            <div class="tip">
+                <h2>Perfect Your Base</h2>
+                <p>Always start with a clean and moisturized face. Use a primer suited to your skin type to create a smooth base for your foundation.</p>
+            </div>
+            <div class="tip">
+                <h2>Match Your Lip Color</h2>
+                <p>Pick lip shades that complement your outfit and skin tone. Neutral shades are perfect for everyday wear, while bold colors can make a statement for special occasions.</p>
+            </div>
+            <div class="tip">
+                <h2>Blend, Blend, Blend!</h2>
+                <p>Seamless blending is key to a polished look. Use quality brushes or sponges to ensure your makeup looks natural and well-blended.</p>
+            </div>
+        </section>
+    </div>
+   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dress Selection Tips</title>
+         <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f3f4f6;
+                font-family: 'Lora', serif;
+                color: #333;
+            }
+            header {
+                background-color: #ff6f61;
+                color: rgb(10, 9, 9);
+                padding: 1rem 0;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .container {
+                max-width: 700px;
+                margin: 2rem auto;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+            }
+            label {
+                font-weight: 600;
+                display: block;
+                margin: 1rem 0 0.5rem;
+            }
+            select {
+                width: 100%;
+                padding: 0.75rem;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            button {
+                width: 100%;
+                padding: 0.75rem;
+                background-color: #d47b33;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: background-color 0.3s ease;
+            }
+            button:hover {
+                background-color: #e0a950;
+            }
+            .tips {
+                margin-top: 1.5rem;
+                padding: 1.5rem;
+                background: #f9fafb;
+                border-left: 5px solid #ff6f61;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                font-size: 1.1rem;
+                line-height: 1.6;
+                display: none;
+            }
+            .tips p {
+                margin: 0.5rem 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Dress Selection Tips</h1>
+        </header>
+        <div class="container">
+            <label for="bodyType">Select Body Type:</label>
+            <select id="bodyType">
+                <option value="">--Choose--</option>
+                <option value="hourglass">Hourglass</option>
+                <option value="pear">Pear</option>
+                <option value="rectangle">Rectangle</option>
+                <option value="apple">Apple</option>
+                <option value="inverted_triangle">Inverted Triangle</option>
+                <option value="athletic">Athletic</option>
+            </select>
+    
+            <label for="skinTone">Select Skin Tone:</label>
+            <select id="skinTone">
+                <option value="">--Choose--</option>
+                <option value="fair">Fair</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+    
+            <button onclick="showTips()">Get Tips</button>
+    
+            <div id="tips" class="tips"></div>
+        </div>
+    
+        <script>
+            function showTips() {
+                const bodyType = document.getElementById('bodyType').value;
+                const skinTone = document.getElementById('skinTone').value;
+                const tipsDiv = document.getElementById('tips');
+    
+                let tips = '';
+    
+                if (!bodyType || !skinTone) {
+                    tips = '<p>Please select both body type and skin tone to get tips.</p>';
+                } else {
+                    if (bodyType === 'hourglass') {
+                        tips += `<p><strong>For an Hourglass Body:</strong></p>
+                                 <p>- Sarees with well-fitted blouses that accentuate your waist are ideal.</p>
+                                 <p>- Lehengas with belts highlight your curves perfectly.</p>
+                                 <p>- Anarkali suits complement your balanced proportions beautifully.</p>`;
+                    } else if (bodyType === 'pear') {
+                        tips += `<p><strong>For a Pear Body:</strong></p>
+                                 <p>- A-line kurtas and flared skirts balance your lower body.</p>
+                                 <p>- Avoid tight-fitting bottoms; choose palazzos or shararas instead.</p>
+                                 <p>- Tops with embellishments or embroidery enhance your upper body.</p>`;
+                    } else if (bodyType === 'rectangle') {
+                        tips += `<p><strong>For a Rectangle Body:</strong></p>
+                                 <p>- Heavy-border sarees create curves elegantly.</p>
+                                 <p>- Peplum-style blouses for lehengas add definition.</p>
+                                 <p>- Layered Anarkali suits give volume and depth to your frame.</p>`;
+                    } else if (bodyType === 'apple') {
+                        tips += `<p><strong>For an Apple Body:</strong></p>
+                                 <p>- Empire-waist Anarkali suits are flattering and elegant.</p>
+                                 <p>- Lightweight sarees like chiffon and georgette drape gracefully.</p>
+                                 <p>- Avoid clingy fabrics; flowy kurtas and salwar sets are your go-to.</p>`;
+                    } else if (bodyType === 'inverted_triangle') {
+                        tips += `<p><strong>For an Inverted Triangle Body:</strong></p>
+                                 <p>- Flared lehengas and skirts add balance to your silhouette.</p>
+                                 <p>- Avoid heavy embellishments on the upper body; opt for simple tops.</p>
+                                 <p>- Off-shoulder blouses and soft fabrics work wonders.</p>`;
+                    } else if (bodyType === 'athletic') {
+                        tips += `<p><strong>For an Athletic Body:</strong></p>
+                                 <p>- Experiment with ruffles, pleats, and layers to create volume.</p>
+                                 <p>- Sarees with bold prints and contrasting blouses add charm.</p>
+                                 <p>- Dhoti-style salwar suits can look incredibly stylish on you.</p>`;
+                    }
+    
+                    if (skinTone === 'fair') {
+                        tips += `<p><strong>For Fair Skin:</strong></p>
+                                 <p>- Soft pastel shades like baby pink, mint green, and sky blue are flattering.</p>
+                                 <p>- Avoid overly bright colors; subtle shades enhance your complexion.</p>
+                                 <p>- Gold and silver-toned jewelry work beautifully with your skin tone.</p>`;
+                    } else if (skinTone === 'medium') {
+                        tips += `<p><strong>For Medium Skin:</strong></p>
+                                 <p>- Jewel tones like emerald green, ruby red, and sapphire blue are stunning.</p>
+                                 <p>- Earthy colors like mustard, rust, and olive green complement your tone.</p>
+                                 <p>- Antique gold or bronze jewelry gives an elegant touch.</p>`;
+                    } else if (skinTone === 'dark') {
+                        tips += `<p><strong>For Dark Skin:</strong></p>
+                                 <p>- Vibrant colors like magenta, mustard yellow, and royal blue enhance your glow.</p>
+                                 <p>- Deep colors like wine, maroon, and navy blue are timeless.</p>
+                                 <p>- Kundan or oxidized silver jewelry stands out beautifully.</p>`;
+                    }
+                }
+    
+                tipsDiv.innerHTML = tips;
+                tipsDiv.style.display = 'block';
+            }
+        </script>
+    </body>
+    
+
+    <footer>
+        <p>&copy; 2024 Stylemate.All rights reserved.</p>
+    </footer>
+</body>
+</html>

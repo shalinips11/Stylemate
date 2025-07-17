@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Monthly Calendar</title>
+    <link rel="stylesheet" href="./styleA.css">
+</head>
+<body>
+
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button onclick="prevMonth()">Prev</button>
+        <h2 id="monthYear"></h2>
+        <button onclick="nextMonth()">Next</button>
+    </div>
+    <div class="calendar-weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+    <div class="notes">
+        <label>Remember Your Occasion </label>
+        <input type="hidden"" id="noteInput" >
+    </div>
+</div>
+
+<div class="popup" id="popup">
+    <h3>Mark Your Occasion</h3>
+    <label><input type="checkbox" id="birthday"> 🎂 Birthday</label>
+    <label><input type="checkbox" id="party"> 🎉 Party</label>
+    <label><input type="checkbox" id="marriage"> 💍 Marriage</label>
+    <label><input type="checkbox" id="festival"> 🎆 Festival</label>
+    <button onclick="saveEvent()">Save</button>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
