@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #5d5a5a, #3a3a3a);
+            color: #fff;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .selected-options {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .selected-options img {
+            width: 160px;
+            height: auto;
+            border-radius: 12px;
+            margin: 10px;
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .category {
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #ff6b81, #ffb6c1);
+            border-radius: 12px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            color: white;
+            border: none;
+            display: inline-block;
+        }
+        .category:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(255, 107, 129, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Customize Your Style</h1>
+
+    <div class="selected-options">
+        <h2>Your Selection</h2>
+        <img id="neck-img" src="path/to/default-neck.jpg" alt="Selected Neck Shape">
+        <p>Chosen Color: <span id="chosen-color">Not Selected</span></p>
+    </div>
+
+    <h2>Choose Additional Styling</h2>
+
+    <div class="categories">
+        <div class="category" onclick="redirectToPage('hairstyles1.html')">Hairstyles</div>
+        <div class="category" onclick="redirectToPage('tra.accs.warm.html')">Accessories</div>
+        <div class="category" onclick="redirectToPage('foot1.html')">Shoes/Slippers</div>
+    </div>
+
+    <script>
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+
+        window.onload = function() {
+            const neckImg = document.getElementById('neck-img');
+            const chosenColorElement = document.getElementById('chosen-color');
+
+            // Get stored values
+            const selectedNeck = localStorage.getItem('selectedNeck');
+            const timestamp = localStorage.getItem('neckTimestamp');
+            let chosenColor = localStorage.getItem('selectedColor');
+
+            // Debugging logs
+            console.log("Stored Neck:", selectedNeck);
+            console.log("Stored Color:", chosenColor);
+
+            // Set the neck image if available
+            if (selectedNeck) {
+                neckImg.src = `${selectedNeck}?t=${timestamp}`;
+            } else {
+                neckImg.src = 'path/to/default-neck.jpg';
+            }
+
+            // Ensure proper retrieval and display of color
+            if (chosenColor) {
+                chosenColor = chosenColor.trim();
+                chosenColorElement.textContent = chosenColor;
+                checkColorAndRedirect(chosenColor);
+            } else {
+                chosenColorElement.textContent = "Not Selected";
+            }
+        };
+
+        function checkColorAndRedirect(color) {
+            if (!color) return;
+
+            const warmColors = ["Red", "Orange", "Yellow", "Pink"];
+            const coolColors = ["Blue", "Green", "Purple", "Teal"];
+
+            if (warmColors.includes(color)) {
+                console.log("Redirecting to warm page...");
+                setTimeout(() => { window.location.href = "tra.accs.warm.html"; }, 1000);
+            } else if (coolColors.includes(color)) {
+                console.log("Redirecting to cool page...");
+                setTimeout(() => { window.location.href = "tra.accs.cool.html"; }, 1000);
+            } else {
+                console.log("No redirection, color not categorized.");
+            }
+        }
+    </script>
+
+</body>
+</html>
